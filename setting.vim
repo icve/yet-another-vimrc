@@ -20,6 +20,10 @@ set ignorecase smartcase
 " theme and colors
 set t_Co=256
 colorscheme pablo
+"colorscheme industry
+"colorscheme koehloe
+"hi Visual ctermfg=3 ctermbg=0 cterm=bold,underline
+
 
 "highlight trailing white spaces
 highlight TrailingWhiteSpaces ctermbg=red guibg=red
@@ -75,10 +79,6 @@ autocmd filetype html nmap <leader>; mmA;<C-C>`m
 " nmap <CR> o<C-C>k
 " nmap <BS> O<C-C>j
 
-
-"colorscheme industry
-"colorscheme koehloe
-"hi Visual ctermfg=3 ctermbg=0 cterm=bold,underline
 
 " disable key to form habit
 imap <BS> *
