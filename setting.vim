@@ -17,6 +17,10 @@ set smarttab
 set wrap
 set ignorecase smartcase
 
+" theme and colors
+set t_Co=256
+colorscheme pablo
+
 "highlight trailing white spaces
 highlight TrailingWhiteSpaces ctermbg=red guibg=red
 match TrailingWhiteSpaces /\s\+$/
@@ -45,6 +49,10 @@ autocmd filetype javascript nmap <leader>// mmI//<C-C>`m
 autocmd filetype javascript nmap <leader>/ mmI<Del><Del><C-C>`m
 autocmd filetype javascript nmap <leader>* I/*<C-C>A*/
 
+" asm comment
+autocmd filetype asm nmap <leader>// mmI;<C-C>`m
+autocmd filetype asm nmap <leader>/ mm^x`m
+
 " leader select and quote
 vmap <leader>" c"<C-R>""<C-C>
 vmap <leader>' c'<C-R>"'<C-C>
@@ -61,14 +69,13 @@ nmap S :up<CR>
 
 "space as leader
 nmap <space> <leader>
+autocmd filetype html nmap <leader>; mmA;<C-C>`m
 
 " insert new line without entering insert mode
-nmap <CR> o<C-C>k
-nmap <BS> O<C-C>j
+" nmap <CR> o<C-C>k
+" nmap <BS> O<C-C>j
 
-" theme and colors
-set t_Co=256
-colorscheme pablo
+
 "colorscheme industry
 "colorscheme koehloe
 "hi Visual ctermfg=3 ctermbg=0 cterm=bold,underline
