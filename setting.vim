@@ -46,6 +46,7 @@ autocmd filetype javascript nmap <F7> :!eslint "%" <CR>
 
 " leader ; to add ; to end of line
 autocmd filetype javascript nmap <leader>; mmA;<C-C>`m
+autocmd filetype c nmap <leader>; mmA;<C-C>`m
 
 " js comments
 autocmd filetype javascript nmap <leader>; mmA;<C-C>`m
