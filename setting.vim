@@ -47,6 +47,7 @@ autocmd filetype javascript nmap <F7> :!eslint "%" <CR>
 " leader ; to add ; to end of line
 autocmd filetype javascript nmap <leader>; mmA;<C-C>`m
 autocmd filetype c nmap <leader>; mmA;<C-C>`m
+autocmd filetype arduino nmap <leader>; mmA;<C-C>`m
 
 " js comments
 autocmd filetype javascript nmap <leader>; mmA;<C-C>`m
@@ -71,6 +72,9 @@ nmap <F2> :!<Enter>
 
 " save a file with S
 nmap S :up<CR>
+
+" vertically split and edit .
+nmap <leader>e <C-W>v<C-W>l:e .<CR>
 
 "space as leader
 nmap <space> <leader>
