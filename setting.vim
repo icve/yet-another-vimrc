@@ -36,10 +36,15 @@ autocmd filetype asm nmap <F5> :up<CR>:!./compile_upload.sh %<CR>
 autocmd filetype html nmap <F5> :up<CR>:!google-chrome "%" &<CR>
 autocmd filetype python nmap <F5> :up<CR>:!python "%"<CR>
 autocmd filetype javascript nmap <F5> :up<CR>:!node "%"<CR>
+autocmd filetype sh nmap <F5> :up<CR>:! bash "%"<CR>
+autocmd filetype java nmap <F5> :up<CR>:! javac *.java<CR> :!java $(basename % .java) <CR>
 
 " <F6> to run unittest
 autocmd filetype python nmap <F6> :up<CR>:!python -m unittest<CR>
-autocmd filetype asm nmap <F6> :!python ./util/read.py<CR>
+autocmd filetype asm nmap <F6> :up<CR>:!python ./util/read.py<CR>
+autocmd filetype c nmap <F6> :up<CR>:make clean<CR>:make<CR>
+" jast compile
+autocmd filetype java nmap <F6> :up <CR>:!javac *.java<CR>
 
 " <F7> to lint
 autocmd filetype javascript nmap <F7> :!eslint "%" <CR>
@@ -59,6 +64,12 @@ autocmd filetype javascript nmap <leader>* I/*<C-C>A*/
 autocmd filetype asm nmap <leader>// mmI;<C-C>`m
 autocmd filetype asm nmap <leader>/ mm^x`m
 
+"noexpand tab in make
+autocmd FileType make setlocal noexpandtab
+
+" 79 char line length limit highlight
+set colorcolumn=79
+
 " leader select and quote
 vmap <leader>" c"<C-R>""<C-C>
 vmap <leader>' c'<C-R>"'<C-C>
@@ -72,6 +83,9 @@ nmap <F2> :!<Enter>
 
 " save a file with S
 nmap S :up<CR>
+
+" CTRL-p to open file broswer
+nmap <C-P> :Explore<Enter>
 
 " vertically split and edit .
 nmap <leader>e <C-W>v<C-W>l:e .<CR>
