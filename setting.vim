@@ -42,7 +42,10 @@ autocmd filetype java nmap <F5> :up<CR>:! javac *.java<CR> :!java $(basename % .
 " <F6> to run unittest
 autocmd filetype python nmap <F6> :up<CR>:!python -m unittest<CR>
 autocmd filetype asm nmap <F6> :up<CR>:!python ./util/read.py<CR>
-autocmd filetype c nmap <F6> :up<CR>:make clean<CR>:make<CR>
+
+"leader m to make
+autocmd filetype c nmap <leader>m :up<CR>:make clean<CR>:make<CR>
+
 " jast compile
 autocmd filetype java nmap <F6> :up <CR>:!javac *.java<CR>
 
@@ -89,6 +92,7 @@ nmap <C-P> :Explore<Enter>
 
 " vertically split and edit .
 nmap <leader>e <C-W>v<C-W>l:e .<CR>
+
 
 "space as leader
 nmap <space> <leader>
